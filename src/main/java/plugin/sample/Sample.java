@@ -72,6 +72,7 @@ public final class Sample extends JavaPlugin implements Listener {
     count++;
   }
 
+  // ベッドに入ろうとするとアイテムが64個になる。
   @EventHandler
   public void onPlayerBedEnter(PlayerBedEnterEvent e){
     Player player = e.getPlayer();

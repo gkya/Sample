@@ -68,6 +68,9 @@ public final class Sample extends JavaPlugin implements Listener {
       Files.writeString(path, "たーまやー", StandardOpenOption.APPEND);
       player.sendMessage(Files.readString(path));
     }
+    /*
+    スニークの回数数える。
+    */
     System.out.println(count + " 回目のスニークです。");
     count++;
   }

@@ -1,4 +1,6 @@
 name: Sample
 version: '1.0-SNAPSHOT'
-main: plugin.sample.Sample
+main: plugin.sample.Main
 api-version: 1.19
+commands:
+  levelup:

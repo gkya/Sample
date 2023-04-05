@@ -1,7 +1,6 @@
 package plugin.sample;
 
 import java.io.IOException;
-import java.math.BigInteger;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
@@ -23,16 +22,19 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.FireworkMeta;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.event.player.PlayerJoinEvent;
-import org.bukkit.event.player.PlayerLoginEvent;
 
 
-public final class Sample extends JavaPlugin implements Listener {
+public final class Main extends JavaPlugin implements Listener {
 
   private int count;
 
   @Override
   public void onEnable() {
     Bukkit.getPluginManager().registerEvents(this, this);
+    getCommand("levelup").setExecutor(new LevelUpCommand());
+  }
+
+  private void setExecutor(LevelUpCommand levelUpCommand) {
   }
 
   /**

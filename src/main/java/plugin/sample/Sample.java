@@ -22,6 +22,9 @@ import org.bukkit.event.player.PlayerToggleSneakEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.FireworkMeta;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.event.player.PlayerLoginEvent;
+
 
 public final class Sample extends JavaPlugin implements Listener {
 
@@ -84,6 +87,14 @@ public final class Sample extends JavaPlugin implements Listener {
       .filter(item -> !Objects.isNull(item) && item.getMaxStackSize() == 64 && item.getAmount() < 32)
       .forEach(item -> item.setAmount(64));
     player.getInventory().setContents(itemStacks);
+  }
+
+  // join後の動作
+
+  @EventHandler
+  public void onPlayerJoin(PlayerJoinEvent e){
+    e.getPlayer().sendMessage("ようこそテストサーバーへ！");
+
   }
 
 }

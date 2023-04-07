@@ -28,10 +28,12 @@ public final class Main extends JavaPlugin implements Listener {
 
   private int count;
 
+  // LevelUpCommand, LevelChangeCommand
   @Override
   public void onEnable() {
     Bukkit.getPluginManager().registerEvents(this, this);
     getCommand("levelup").setExecutor(new LevelUpCommand());
+    getCommand("level100up").setExecutor(new Level100upCommand());
   }
 
   private void setExecutor(LevelUpCommand levelUpCommand) {

@@ -6,3 +6,4 @@ commands:
   setLevel:
   level100up:
   getLevel:
+  allSetLevel:

@@ -3,5 +3,6 @@ version: '${version}'
 main: plugin.sample.Main
 api-version: 1.19
 commands:
-  levelup:
+  setLevel:
   level100up:
+  getLevel:

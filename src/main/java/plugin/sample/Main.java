@@ -31,8 +31,10 @@ public final class Main extends JavaPlugin implements Listener {
   // LevelUpCommand, LevelChangeCommand
   @Override
   public void onEnable() {
+    saveDefaultConfig();
+
     Bukkit.getPluginManager().registerEvents(this, this);
-    getCommand("setLevel").setExecutor(new SetLevelCommand());
+    getCommand("setLevel").setExecutor(new SetLevelCommand(this));
     getCommand("level100up").setExecutor(new Level100upCommand());
     getCommand("getLevel").setExecutor(new GetLevelCommand());
     getCommand("allSetLevel").setExecutor(new AllSetLevelCommand());

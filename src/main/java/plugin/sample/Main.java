@@ -11,7 +11,10 @@ import org.bukkit.Bukkit;
 import org.bukkit.Color;
 import org.bukkit.FireworkEffect;
 import org.bukkit.FireworkEffect.Type;
+import org.bukkit.Location;
+import org.bukkit.Material;
 import org.bukkit.World;
+import org.bukkit.entity.Chicken;
 import org.bukkit.entity.Firework;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -102,6 +105,15 @@ public final class Main extends JavaPlugin implements Listener {
   @EventHandler
   public void onPlayerJoin(PlayerJoinEvent e){
     e.getPlayer().sendMessage("ようこそテストサーバーへ！");
+    Player player = e.getPlayer();
+    World world = player.getWorld();
+    Location playerLocation = player.getLocation();
+
+    world.spawn(new Location(world, playerLocation.getX() + 3, playerLocation.getY(), playerLocation.getZ()), Chicken.class);
+    world.getBlockAt(new Location(world,
+      playerLocation.getX() + 4,
+      playerLocation.getY(),
+      playerLocation.getZ())).setType(Material.DARK_OAK_WOOD);
 
   }
 
